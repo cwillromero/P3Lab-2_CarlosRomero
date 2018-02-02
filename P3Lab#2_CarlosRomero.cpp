@@ -4,7 +4,9 @@
 #include <math.h>
 #include <stdio.h>
 #define PI 3.14159265
+
 using namespace std;
+
 int menu();
 void Ejercicio1();
 void EvaluarTriangular(int, int);
