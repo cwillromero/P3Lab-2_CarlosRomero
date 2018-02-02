@@ -132,7 +132,6 @@ void Ejercicio2(){
 	double anguloac=0;
 	double angulobc=0;
 	int mayor=0;
-
 	cout<<"Ingrese el lado A: ";
 	cin>>ladoa;
 	cout<<endl<<"Ingrese el lado B: ";
@@ -173,4 +172,5 @@ void Ejercicio2(){
 	//cout<<S<<endl;
 	area=sqrt(S*(S-ladoa)*(S-ladob)*(S-ladoc));
 	cout<<"El Área del Triángulo es: "<<area<<endl;
+
 }
