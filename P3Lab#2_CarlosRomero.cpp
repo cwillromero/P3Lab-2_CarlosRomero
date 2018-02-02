@@ -1,9 +1,11 @@
 #include <iostream>
+#include <stdlib.h> 
 #include <string>
 
 using namespace std;
 int menu();
 void Ejercicio1();
+void EvaluarTriangular(int, int);
 
 main(){
 	int opcion=0;
@@ -51,7 +53,7 @@ void Ejercicio1(){
         <<"3- Número Triangular previo"<<endl;
 	bool evaluar=true;
 	while (evaluar==true){
-		cout<<"Ingrese un número: "<<endl;
+		cout<<"Ingrese una opcion: "<<endl;
 		cin>>opcion;
 		if(opcion!=1 & opcion!=2 & opcion!=3){
 			cout<<"Opcion Incorrecta!"<<endl;
@@ -61,34 +63,57 @@ void Ejercicio1(){
 		}
 	}
 	switch (opcion){
-		case 1:
+		case 1:{
 			int numero=0;
-			cout<<"Ingrese un Número: ";
+			cout<<"Ingrese un Número: "<<endl;
 			cin>>numero;
-			cout<<endl;
-			int acum1=0;
-			int acum2=0;
-			bool triangular=true;
-			for(int i=1; i<=numero; i++){
-				acum1=acum1+i;
-				if(acum1<=numero){
-					acum2=acum1;
-					if(acum2==numero){
-						triangular=true;
-					}else{
-						triangular=false;
-					}
-				}else{
-					break;
-				}
-			}
-
-			if(triangular==true){
-				cout<<">>----El número: "<<numero<<" SÍ es triangular.----<<"<<endl;
-			}else{
-				cout<<">>---El número: "<<numero<<" NO es triangular.----<<"<<endl;
-
-			}
+			EvaluarTriangular(numero,opcion);
 		break;
+		       }
+		case 2:{
+			int numero2=0;
+			numero2=rand() % 200 + 1;
+			cout<<"El Numero Aleatorio es: "<<numero2<<endl;
+			EvaluarTriangular(numero2,opcion);
+		break;
+			}
+		case 3:{
+			int numero3=0;
+			cout<<"Ingrese un Número: ";
+			cin>>numero3;
+			EvaluarTriangular(numero3,opcion);
+		break;
+		       }
 	}	
+}
+
+
+void EvaluarTriangular(int numero, int opcion){
+	int acum1=0;
+	int acum2=0;
+	bool triangular=true;
+	for(int i=0; i<=numero;i++){
+		acum1=acum1+i;
+		if(acum1<=numero){
+			acum2=acum1;
+			if(acum2==numero){
+				triangular=true;
+		       	}else{
+				triangular=false;
+			}
+		}else{
+			break;
+		}
+	}
+
+	if(triangular==true){
+		 cout<<">>----El número: "<<numero<<" SÍ es triangular.----<<"<<endl<<endl;
+	}else{
+                 cout<<">>---El número: "<<numero<<" NO es triangular.----<<"<<endl<<endl;
+		 if(opcion==3){
+		 	cout<<">>---El número triangular anterior a : "<<numero<<"; es: "<< acum2<<"----<<"<<endl<<endl;
+		 }
+
+        }
+
 }
