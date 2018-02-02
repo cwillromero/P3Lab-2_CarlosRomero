@@ -13,7 +13,6 @@ void Ejercicio3();
 int NumeroCatalan(int);
 int factorial(int);
 
-
 main(){
 	int opcion=0;
 	while (opcion!=4){
@@ -203,9 +202,9 @@ void Ejercicio3(){
 	cout<<"Ingrese un Número: ";
 	cin>>numero;
 	cout<<endl;
-	for(int i=1; i<numero;i++){
+	for(int i=1; i<=numero;i++){
 		int Catalan=NumeroCatalan(i);
-		if(i==(numero-1)){
+		if(i==numero){
 			cout<<Catalan;
 			cout<<endl;
 		}else{
