@@ -2,7 +2,8 @@
 #include <stdlib.h> 
 #include <string>
 #include <math.h>
-
+#include <stdio.h>
+#define PI 3.14159265
 using namespace std;
 int menu();
 void Ejercicio1();
@@ -124,9 +125,9 @@ void EvaluarTriangular(int numero, int opcion){
 
 void Ejercicio2(){
 	cout<<"---Ejercicio 2---"<<endl;
-	int ladoa=0;
-	int ladob=0;
-	int ladoc=0;
+	double ladoa=0;
+	double ladob=0;
+	double ladoc=0;
 	double area=0;
 	double anguloab=0;
 	double anguloac=0;
@@ -171,6 +172,21 @@ void Ejercicio2(){
 	S=(ladoa+ladob+ladoc)/2;
 	//cout<<S<<endl;
 	area=sqrt(S*(S-ladoa)*(S-ladob)*(S-ladoc));
+	if(mayor==ladoa){
+		double temp=ladob;
+		ladob=mayor;
+		ladoa=temp;
+	}else if(mayor==ladoc){
+		double temp=ladob;
+		ladob=mayor;
+		ladoc=temp;
+	}
+	cout<<"a "<<ladoa<<"b "<<ladob<<"c "<<ladoc<<endl;
 	cout<<"El Área del Triángulo es: "<<area<<endl;
-
+	angulobc=asin(((ladoc*ladoc)+(ladob*ladob)-(ladoa*ladoa))/(2*ladob*ladoc))*180.0/ PI;
+	cout<<"El ángulo BC es: "<<angulobc<<endl;
+	anguloac=acos(((ladoa*ladoa)+(ladob*ladob)-(ladoc*ladoc))/(2*ladoa*ladoc))*180.0/ PI;
+	cout<<"El ángulo AC es: "<<anguloac<<endl;
+	anguloab=acos(((ladoa*ladoa)+(ladob*ladob)-(ladoc*ladoc))/(2*ladoa*ladoc))*180.0/ PI;
+	cout<<"El ángulo AB es: "<<anguloab<<endl<<endl;
 }
