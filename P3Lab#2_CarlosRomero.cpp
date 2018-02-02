@@ -9,7 +9,8 @@ int menu();
 void Ejercicio1();
 void EvaluarTriangular(int, int);
 void Ejercicio2();
-
+void Ejercicio3();
+int NumeroCatalan(int);
 main(){
 	int opcion=0;
 	while (opcion!=4){
@@ -20,7 +21,8 @@ main(){
 			case 2:
 				Ejercicio2();
 			break;
-			case 3: 
+			case 3:
+		       		Ejercicio3();	
 			break;
 		}
 	}
@@ -189,4 +191,32 @@ void Ejercicio2(){
 	cout<<"El ángulo AC es: "<<anguloac<<endl;
 	anguloab=180.0-angulobc-anguloac;
 	cout<<"El ángulo AB es: "<<anguloab<<endl<<endl;
+}
+
+
+void Ejercicio3(){
+	cout<<endl<<"---Numeros de Catalán---"<<endl;
+	int numero=0;
+	cout<<"Ingrese un Número: ";
+	cin>>numero;
+	cout<<endl;
+	for(int i=0; i<numero;i++){
+		int Catalan=NumeroCatalan(i);
+		if(i==(numero-1)){
+			cout<<Catalan;
+			cout<<endl;
+		}else{
+			cout<<Catalan;
+			cout<<", ";
+		}
+	}
+	cout<<endl;
+}	
+
+int NumeroCatalan(int num){
+	if (num <= 0){
+		 return 1;   
+	}else{
+   	     return (2 * (2*num - 1) * NumeroCatalan(num - 1)) / (num + 1);   
+	}	     
 }
