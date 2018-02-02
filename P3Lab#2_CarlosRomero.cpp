@@ -1,11 +1,13 @@
 #include <iostream>
 #include <stdlib.h> 
 #include <string>
+#include <math.h>
 
 using namespace std;
 int menu();
 void Ejercicio1();
 void EvaluarTriangular(int, int);
+void Ejercicio2();
 
 main(){
 	int opcion=0;
@@ -15,6 +17,7 @@ main(){
 				Ejercicio1();
 			break;
 			case 2:
+				Ejercicio2();
 			break;
 			case 3: 
 			break;
@@ -48,7 +51,8 @@ int menu(){
 
 void Ejercicio1(){
 	int opcion=0;
-	cout<<"1- Identificar si un número es triangular"<<endl
+	cout<<"---Ejercicio 1---"<<endl
+	<<"1- Identificar si un número es triangular"<<endl
 	<<"2- Identificar si un número aleatorio es triangular"<<endl
         <<"3- Número Triangular previo"<<endl;
 	bool evaluar=true;
@@ -116,4 +120,57 @@ void EvaluarTriangular(int numero, int opcion){
 
         }
 
+}
+
+void Ejercicio2(){
+	cout<<"---Ejercicio 2---"<<endl;
+	int ladoa=0;
+	int ladob=0;
+	int ladoc=0;
+	double area=0;
+	double anguloab=0;
+	double anguloac=0;
+	double angulobc=0;
+	int mayor=0;
+
+	cout<<"Ingrese el lado A: ";
+	cin>>ladoa;
+	cout<<endl<<"Ingrese el lado B: ";
+	cin>>ladob;
+	cout<<endl<<"Ingrese el lado C: ";
+	cin>>ladoc;
+	cout<<endl;
+	if(ladoa>ladob){
+		mayor=ladoa;
+	}else{
+		mayor=ladob;
+	}
+	if(mayor<ladoc){
+		mayor=ladoc;
+	}
+	//cout<<mayor<<endl;
+	if(mayor==ladoa){
+		if((ladoa*ladoa)==((ladob*ladob)+(ladoc*ladoc))){
+			cout<<"El Triangulo SI es Rectangulo"<<endl;
+		}else{
+			cout<<"El Triangulo NO es Rectangulo"<<endl;
+		}
+	}else if(mayor==ladob){
+		if((ladob*ladob)==((ladoa*ladoa)+(ladoc*ladoc))){
+			cout<<"El Triangulo SI es Rectangulo"<<endl;
+	        }else{
+	        	cout<<"El Triangulo NO es Rectangulo"<<endl;
+	 	}
+	}else{
+		if((ladoc*ladoc)==((ladob*ladob)+(ladoa*ladoa))){
+                       cout<<"El Triangulo SI es Rectangulo"<<endl;
+		}else{
+			cout<<"El Triangulo NO es Rectangulo"<<endl;
+		}
+	}		
+	double S=0;
+	S=(ladoa+ladob+ladoc)/2;
+	//cout<<S<<endl;
+	area=sqrt(S*(S-ladoa)*(S-ladob)*(S-ladoc));
+	cout<<"El Área del Triángulo es: "<<area<<endl;
 }
