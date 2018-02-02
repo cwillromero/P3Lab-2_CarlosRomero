@@ -173,20 +173,20 @@ void Ejercicio2(){
 	//cout<<S<<endl;
 	area=sqrt(S*(S-ladoa)*(S-ladob)*(S-ladoc));
 	if(mayor==ladoa){
-		double temp=ladob;
-		ladob=mayor;
+		double temp=ladoc;
+		ladoc=mayor;
 		ladoa=temp;
-	}else if(mayor==ladoc){
-		double temp=ladob;
-		ladob=mayor;
-		ladoc=temp;
+	}else if(mayor==ladob){
+		double temp=ladoc;
+		ladoc=mayor;
+		ladob=temp;
 	}
 	cout<<"a "<<ladoa<<"b "<<ladob<<"c "<<ladoc<<endl;
 	cout<<"El Área del Triángulo es: "<<area<<endl;
-	angulobc=asin(((ladoc*ladoc)+(ladob*ladob)-(ladoa*ladoa))/(2*ladob*ladoc))*180.0/ PI;
+	angulobc=(acos(((ladob*ladob)+(ladoc*ladoc)-(ladoa*ladoa))/(2*ladob*ladoc)))*(180.0/ PI);
 	cout<<"El ángulo BC es: "<<angulobc<<endl;
-	anguloac=acos(((ladoa*ladoa)+(ladob*ladob)-(ladoc*ladoc))/(2*ladoa*ladoc))*180.0/ PI;
+	anguloac=(acos(((ladoa*ladoa)+(ladoc*ladoc)-(ladob*ladob))/(2*ladoa*ladoc)))*(180.0/ PI);
 	cout<<"El ángulo AC es: "<<anguloac<<endl;
-	anguloab=acos(((ladoa*ladoa)+(ladob*ladob)-(ladoc*ladoc))/(2*ladoa*ladoc))*180.0/ PI;
+	anguloab=180.0-angulobc-anguloac;
 	cout<<"El ángulo AB es: "<<anguloab<<endl<<endl;
 }
