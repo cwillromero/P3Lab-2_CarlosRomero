@@ -11,6 +11,9 @@ void EvaluarTriangular(int, int);
 void Ejercicio2();
 void Ejercicio3();
 int NumeroCatalan(int);
+int factorial(int);
+
+
 main(){
 	int opcion=0;
 	while (opcion!=4){
@@ -200,7 +203,7 @@ void Ejercicio3(){
 	cout<<"Ingrese un Número: ";
 	cin>>numero;
 	cout<<endl;
-	for(int i=0; i<numero;i++){
+	for(int i=1; i<numero;i++){
 		int Catalan=NumeroCatalan(i);
 		if(i==(numero-1)){
 			cout<<Catalan;
@@ -214,9 +217,15 @@ void Ejercicio3(){
 }	
 
 int NumeroCatalan(int num){
-	if (num <= 0){
-		 return 1;   
-	}else{
-   	     return (2 * (2*num - 1) * NumeroCatalan(num - 1)) / (num + 1);   
-	}	     
+	int numerador=factorial(2*num);
+	int denominador=factorial(num)*factorial(num+1);
+	return numerador/denominador;
+}
+
+int factorial(int num){
+	int acumulador=1;
+	for(int i=1; i<=num; i++){
+		acumulador=acumulador*i;
+	}
+	return acumulador;
 }
