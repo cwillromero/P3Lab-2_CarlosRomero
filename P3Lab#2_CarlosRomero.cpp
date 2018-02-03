@@ -74,27 +74,27 @@ void Ejercicio1(){
 		}
 	}
 	switch (opcion){
-		case 1:{
+		case 1: {
 			int numero=0;
 			cout<<"Ingrese un Número: "<<endl;
 			cin>>numero;
 			EvaluarTriangular(numero,opcion);
 		break;
-		       }
-		case 2:{
+		        }
+		case 2: {
 			int numero2=0;
 			numero2=rand() % 200 + 1;
 			cout<<"El Numero Aleatorio es: "<<numero2<<endl;
 			EvaluarTriangular(numero2,opcion);
 		break;
 			}
-		case 3:{
+		case 3: {
 			int numero3=0;
 			cout<<"Ingrese un Número: ";
 			cin>>numero3;
 			EvaluarTriangular(numero3,opcion);
 		break;
-		       }
+		        } 
 	}	
 }
 
